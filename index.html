@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+	<script src="vue/vue.js"></script>
+</head>
+<body>
+ <!--navBar-->
+ <section id="home">
+	 <nav class="navbar fixed-top navbar-expand-md bg-dark  navbar-dark pb-2" >
+			 <div class="container ">
+				 <a href="#home" class="navbar-brand">
+					 <img src="public/Tlogo.png" alt="" width="45" height="45" >
+				 </a>
+				 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					 <span class="navbar-toggler-icon"></span>
+				 </button>
+				 <div class="collapse navbar-collapse" id="navbarNav" >
+					 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 p-1">
+						 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+						 <li class="nav-item"><a href="#project" class="nav-link"> Project </a></li>
+						 <li class="nav-item"><a href="#about" class="nav-link"> About</a></li>
+						 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+					 </ul>
+				 </div>
+
+			 </div>
+		 </nav>
+	 <div style="height: 775px; background-image: url('public/img/img19.jpg')">
+
+		<h4  class="text-center text-white mt_8"></h4>
+	 </div>
+ </section>
+
+
+
+ <!--end NAv -->
+
+ <!--Project -->
+<section id="project" class="py-4">
+	<div class="container">
+		<div class="row px-5 mt-5">
+			<h3 class="col-md-12  text-center colour border_redi p-2  ">Project</h3>
+			<div class="col-md-4  part1">
+				<div class="card card_shadow">
+					<div class="card-header text-center">{{hdr}}</div>
+					<img class="card-img-top"v-bind:src="imgage" alt="">
+					<div class="card-body">{{des1}}</div>
+					<a v-bind:href="urL" target="_blank" class="btn btn-sm btn-primary">View</a>
+				</div>
+			</div>
+			<div class="col-md-4 part1">
+				<div class="card card_shadow">
+					<div class="card-header text-center">{{hdr1}} </div>
+					<img class="card-img-top"v-bind:src="imgage1" alt="">
+					<div class="card-body">{{des2}}</div>
+					<a v-bind:href="urL1" target="_blank" class="btn btn-sm btn-primary">View</a>
+				</div>
+			</div>
+			<div class="col-md-4 part1">
+				<div class="card card_shadow">
+					<div class="card-header text-center">{{hdr2}}</div>
+					<img class="card-img-top" v-bind:src="imgage2" alt="">
+					<div class="card-body">{{des3}}</div>
+					<a v-bind:href="urL2" target="_blank" class="btn btn-sm btn-primary">View</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+ <!--End Project -->
+
+ <!--about-->
+ <section id="about" >
+	 <div  class="container py-2">
+		 <div  class="row mt-5" >
+			 <div class="col-md-12 mt-3 ">
+				 <h2 class="text-center border pb-2 border_redi1 colour1 ">About</h2>
+				 </div>
+			 <div  class="row  ms-0 ps-0">
+				 <div  class="col-md-8 col-sm-8 ms-3">
+					 <table id="arr" class="table table-bordered table-hover table-responsive-sm">
+						 <tr>
+							 <th class="w-25">Name</th>
+							 <td v-bind="$data">{{name}}</td>
+						 </tr>
+						 <tr>
+							 <th>Email    </th>
+							 <td>{{email}}</td>
+						 </tr>
+						 <tr>
+							 <th>Address </th>
+							 <td>{{address}}</td>
+						 </tr>
+						 <tr>
+							 <th>Mobile  </th>
+							 <td>{{mobile}}</td>
+						 </tr>
+					 </table>
+					 <div class="row border m-0 ">
+						 <h6 class="ps-1 m-1">Objective</h6>
+					 </div>
+					 <div id="obj" class="row border m-0">
+						<span v-bind="$data">{{message}}</span>
+						<span>{{message1}}</span>
+
+					 </div>
+				 </div>
+				 <div id="img" class="col-md-3 col-sm-3 bg-light border ms-5 m-0 p-3 " style="height: 307px;">
+					 <img v-bind:src="image" class=" card-img-top" style="height: 275px;" alt="">
+				 </div>
+			 </div>
+		 </div>
+		 <div class="row ms-0 ps-1">
+			 <div id="skill" class="col-md-12 ms-1  border">
+				 <h4 class="mt-1 ">Skills</h4>
+				 <p>{{tiTle}}</p>
+				 <div class="row">
+					 <div  class="col-md-6  pb-2">
+                         <li v-for="item  in skill" class="ps-3">{{item.text}}</li>
+					 </div>
+
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+ </section>
+ <!--endAbout-->
+ <!--contact-->
+ <section id="contact" >
+	 <div class="container  mt-5 " >
+		 <div class="row m-3 ">
+			 <h4 class="col-md-12 text-center pb-2  border_redi colour2  " style="border: 1px solid #0f5132">Contact</h4>
+			 <div class="col-md-11 mt-3 mx-auto border ">
+				 <div class="card-body">
+					 <div class="col-md-12  align-items-stretch">
+						 <div id="contac">
+							 <div>
+								 <h4>Location</h4>
+								 <p>D-Type colony,Mirpur-1,Dhaka-1216</p>
+							 </div>
+							 <div>
+								 <h4>Email:</h4>
+								 <p>hakiimulhoque@gmail.com</p>
+							 </div>
+							 <div>
+								 <h4>Call:</h4>
+								 <p>+880 1670191780</p>
+							 </div>
+							 <iframe src="https://maps.google.com/maps?q=dtype%20colony%20,mirpur-1%20,Dhaka&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+							 </div>
+
+					 </div>
+				 </div>
+			 </div>
+		 </div>
+
+	 </div>
+ </section>
+ <!--Endcontact-->
+ <footer class="footer">
+	 <div class="container-fluid">
+		 <div class="row">
+			 <div class="col-sm-6">
+				 <script>document.write(new Date().getFullYear())</script>
+			 </div>
+			 <div class="col-sm-6">
+				 <div class="text-sm-right float-end">
+					 Design & Develop by <i class="fa-brands fa-itunes-note"></i>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+ </footer>
+
+
+
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+ <script src="assets/js/waypoint.min.js"></script>
+ <script src="vue/main.js"></script>
+ <script src="assets/js/main.js"></script>
+ <script>
+
+ </script>
+</body>
+</html>
